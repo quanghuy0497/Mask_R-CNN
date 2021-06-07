@@ -20,10 +20,10 @@ It is recommended to organize the dataset folder, testing image/video folder and
     ├── dataset                                   # place the dataset here
     │   └── <dataset_name>              
     │       ├── train
-    │       │   ├── <image_file 1>            # accept .jpg or .jpeg file
+    │       │   ├── <image_file 1>                # accept .jpg or .jpeg file
     │       │   ├── <image_file 2>
     │       │   ├── ...
-    │       │   └── via_export_json.json      # corresponded single annotation file    
+    │       │   └── via_export_json.json          # corresponded single annotation file, must be named 
     │       ├── val
     │       └── test         
     ├── logs                                      # log folder
