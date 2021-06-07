@@ -1,0 +1,26 @@
+name: mask-rcnn
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - tensorflow-gpu=1.14.0
+  - tensorflow=1.14.0
+  - keras=2.2.5
+  - python=3.6 
+  - h5py=2.10.0
+  - imgaug
+  - scikit-image
+  - pip=20.2.2
+  - scikit-learn
+  - IPython
+  - numpy
+  - scipy
+  - Pillow
+  - cython
+  - matplotlib
+  - cudatoolkit=10.0.130
+  - cudnn=7.6.5
+  - cudatoolkit-dev=10.1
+  - pip:
+    - opencv-python
