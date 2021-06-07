@@ -9,7 +9,7 @@ This is an implementation of [**Mask R-CNN**](https://arxiv.org/abs/1703.06870) 
 * Mask R-CNN implementation built on TensorFlow and Keras.
 * Model training with data augmentation and various configuration.
 * mAP callback during the training process for initial evaluation.
-* Model training with 5-fold cross validation split
+* Model training with 5-fold cross validation split.
 * Evaluation with mean Average Precision (mAP) on COCO metric (AP@.50:.05:.95) and PASCAL VOC metric (AP@.50). For more information, read [**here**](https://cocodataset.org/#detection-eval).
 * Jupyter notebooks to visualize the detection pipeline at every step.
 * Convert predicted image results to the annotated file respectively for further training or expanding the dataset. Achieved a more sophisticated mask with less annotating time than manual labeling.
