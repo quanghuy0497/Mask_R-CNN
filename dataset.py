@@ -138,7 +138,7 @@ class CustomDataset(utils.Dataset):
         self.add_class("custom_dataset", 4, "a")
 
         assert subset in ["train", "val"]
-        dataset_dir = os.path.join(dataset_path, subset)        #split train folder to k-fold train and val
+        dataset_dir = os.path.join(dataset_path, 'train')        #split train folder to k-fold train and val
 
         N_Folds = 5
         
