@@ -4,7 +4,7 @@ This is an implementation of [**Mask R-CNN**](https://arxiv.org/abs/1703.06870) 
 
 
 
-# Featues:
+# Features:
 
 * Mask R-CNN implementation built on TensorFlow and Keras.
 * Training code for a custom dataset with transfer learning and data augmentation.
