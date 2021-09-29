@@ -2,7 +2,7 @@
 
 This is an implementation of [**Mask R-CNN**](https://arxiv.org/abs/1703.06870) on Python 3, Keras, and TensorFlow based on Matterport's [**version**](https://github.com/matterport/Mask_RCNN). The model generates bounding boxes and segmentation masks for each instance of an object in the image, usingFeature Pyramid Network (FPN) and a ResNet101 backbone.
 
-
+![](Images/model.png)
 
 # Features:
 
@@ -10,9 +10,11 @@ This is an implementation of [**Mask R-CNN**](https://arxiv.org/abs/1703.06870) 
 * Model training with data augmentation and various configuration.
 * mAP callback during the training process for initial evaluation.
 * Training with 5-fold cross-validation strategy.
-* Evaluation with mean Average Precision (mAP) on COCO metric (AP@.50:.05:.95) and PASCAL VOC metric (AP@.50). For more information, read [**here**](https://cocodataset.org/#detection-eval).
+* Evaluation with mean Average Precision (mAP) on COCO metric `AP@.50:.05:.95` and PASCAL VOC metric `AP@.50`. For more information, read [**here**](https://cocodataset.org/#detection-eval).
 * Jupyter notebooks to visualize the detection pipeline at every step.
-* Convert predicted image results to the annotated file respectively for further training or expanding the dataset. Achieved a more sophisticated mask with less annotating time than manual labeling.
+* Convert predicted image results to the annotated file respectively for further training or expanding the dataset (with VGG Image Annotator format - described in detail in the bellow section). Achieved a more sophisticated mask with less annotating time than by handwork.
+    * For instance, the annotated mask by handwork (left) and by Mask R-CNN's prediction (right)
+        ![](Images/annotation.png)
 
 # Structure
 It is recommended to organize the dataset folder, testing image/video folder and model weight under same folder as the below structure:
@@ -83,7 +85,7 @@ It is recommended to organize the dataset folder, testing image/video folder and
 
 Annotated image for this implementation is created by [VGG Image Annotator](https://www.robots.ox.ac.uk/~vgg/software/via/) with format structure:
 ```
-{ 'filename': '28503151_5b5b7ec140_b.jpg',
+{ 'filename': '<image_name>.jpg',
            'regions': {
                '0': {
                    'region_attributes': {},
@@ -93,7 +95,7 @@ Annotated image for this implementation is created by [VGG Image Annotator](http
                        'name': 'polygon'}},
                ... more regions ...
            },
-           'size': 100202
+           'size': <image_size>
 }
 ```
 
@@ -101,5 +103,5 @@ Annotated image for this implementation is created by [VGG Image Annotator](http
 
 * This implementation is well worked under TensorFlow 1.14.0, Keras 2.2.5, Cuda 10.0.130 and CuDNN 7.6.5
 * ```dataset.py``` must be modify for other custom dataset.
-* Training parameters configuration read [**here**](https://github.com/matterport/Mask_RCNN/wiki).
-* Pre-trained weight on COCO: [**here**](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5) and places it in ```trained_weight\```
+* Futher training parameters configuration can be read in [**here**](https://github.com/matterport/Mask_RCNN/wiki).
+* Pre-trained weight on COCO: download [**here**](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5) and place it in ```trained_weight\```
