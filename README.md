@@ -7,13 +7,13 @@ This is an implementation of [**Mask R-CNN**](https://arxiv.org/abs/1703.06870) 
 ## Features:
 
 * Mask R-CNN implementation built on TensorFlow and Keras.
-* Model training with data augmentation and various configuration.
-* mAP callback during the training process for initial evaluation.
-* Training with 5-fold cross-validation strategy.
+* Model training with _data augmentation_ and _various configuration_.
+* _mAP callback_ during the training process for initial evaluation.
+* Training with **5-fold cross-validation** strategy.
 * Evaluation with mean Average Precision (mAP) on COCO metric `AP@.50:.05:.95` and PASCAL VOC metric `AP@.50`. For more information, read [**here**](https://cocodataset.org/#detection-eval).
 * Jupyter notebooks to visualize the detection pipeline at every step.
-* Convert predicted image results to the annotated file respectively for further training or expanding the dataset (with VGG Image Annotator format - the annotatin format is described in detail [below](#annotation-format). Achieved a finer mask with less annotating time than by handwork (saving ~3 quarters in large-scale).
-    * For instance, the annotated mask by handwork (left) and by Mask R-CNN's prediction (right)
+* Convert predicted image results to the annotated file respectively for further training or expanding the dataset (with VGG Image Annotator format - the annotatin format is described in detail [below](#annotation-format). Achieved **a finer mask** with less annotating time than by handwork (saving ~3 quarters in large-scale).
+    * For instance, the annotated mask by handwork (**_left_**) and by Mask R-CNN's prediction (**_right_**)
         ![](Images/annotation.png)
 
 ## Structure:
