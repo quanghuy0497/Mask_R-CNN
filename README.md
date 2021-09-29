@@ -4,7 +4,7 @@ This is an implementation of [**Mask R-CNN**](https://arxiv.org/abs/1703.06870) 
 
 ![](Images/model.png)
 
-# Features:
+## Features:
 
 * Mask R-CNN implementation built on TensorFlow and Keras.
 * Model training with data augmentation and various configuration.
@@ -12,11 +12,11 @@ This is an implementation of [**Mask R-CNN**](https://arxiv.org/abs/1703.06870) 
 * Training with 5-fold cross-validation strategy.
 * Evaluation with mean Average Precision (mAP) on COCO metric `AP@.50:.05:.95` and PASCAL VOC metric `AP@.50`. For more information, read [**here**](https://cocodataset.org/#detection-eval).
 * Jupyter notebooks to visualize the detection pipeline at every step.
-* Convert predicted image results to the annotated file respectively for further training or expanding the dataset (with VGG Image Annotator format - described in detail in the bellow section). Achieved a more sophisticated mask with less annotating time than by handwork.
+* Convert predicted image results to the annotated file respectively for further training or expanding the dataset (with VGG Image Annotator format - the annotatin format is described in detail below). Achieved a finer mask with less annotating time than by handwork (saving ~3 quarters in large-scale).
     * For instance, the annotated mask by handwork (left) and by Mask R-CNN's prediction (right)
         ![](Images/annotation.png)
 
-# Structure
+## Structure:
 It is recommended to organize the dataset folder, testing image/video folder and model weight under same folder as the below structure:
 
     ├── notebooks                                 # several notebooks from Matterport's Mask R-CNN
@@ -42,7 +42,7 @@ It is recommended to organize the dataset folder, testing image/video folder and
     ├── evaluation.py                             # weight evaluation
     └── training.py                               # training model
     
-# Usage:
+## Usage:
 
  * Conda environment setup:
     ```bash
@@ -81,7 +81,7 @@ It is recommended to organize the dataset folder, testing image/video folder and
     
     ```
      
-# Annotation format 
+## Annotation format: 
 
 Annotated image for this implementation is created by [VGG Image Annotator](https://www.robots.ox.ac.uk/~vgg/software/via/) with format structure:
 ```
@@ -99,7 +99,7 @@ Annotated image for this implementation is created by [VGG Image Annotator](http
 }
 ```
 
-# Note
+## Notes:
 
 * This implementation is well worked under TensorFlow 1.14.0, Keras 2.2.5, Cuda 10.0.130 and CuDNN 7.6.5
 * ```dataset.py``` must be modify for other custom dataset.
