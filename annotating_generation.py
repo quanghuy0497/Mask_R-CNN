@@ -70,7 +70,7 @@ dataset.load_custom(dataset_dir, "val")
 dataset.prepare()
 
 
-predicted_class = ['BG', 'female_genital', 'male_genital', 'breast', 'anus']
+predicted_class = ['BG', 'fg', 'mg', 'b', 'a'] #vlass label
 
 # Create model in inference mode
 #with tf.device(DEVICE):
