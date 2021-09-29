@@ -9,7 +9,7 @@ This is an implementation of [**Mask R-CNN**](https://arxiv.org/abs/1703.06870) 
 * Mask R-CNN implementation built on TensorFlow and Keras.
 * Model training with data augmentation and various configuration.
 * mAP callback during the training process for initial evaluation.
-* Model training with 5-fold cross validation split.
+* Training with 5-fold cross-validation strategy.
 * Evaluation with mean Average Precision (mAP) on COCO metric (AP@.50:.05:.95) and PASCAL VOC metric (AP@.50). For more information, read [**here**](https://cocodataset.org/#detection-eval).
 * Jupyter notebooks to visualize the detection pipeline at every step.
 * Convert predicted image results to the annotated file respectively for further training or expanding the dataset. Achieved a more sophisticated mask with less annotating time than manual labeling.
@@ -102,4 +102,4 @@ Annotated image for this implementation is created by [VGG Image Annotator](http
 * This implementation is well worked under TensorFlow 1.14.0, Keras 2.2.5, Cuda 10.0.130 and CuDNN 7.6.5
 * ```dataset.py``` must be modify for other custom dataset.
 * Training parameters configuration read [**here**](https://github.com/matterport/Mask_RCNN/wiki).
-* Fresh training can download the pre-trained weight [**here**](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5) and places it in ```trained_weight\```
+* Pre-trained weight on COCO: [**here**](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5) and places it in ```trained_weight\```
