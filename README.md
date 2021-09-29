@@ -1,6 +1,6 @@
 # Mask R-CNN for Object Detection and Segmentation
 
-This is an implementation of [**Mask R-CNN**](https://arxiv.org/abs/1703.06870) on Python 3, Keras, and TensorFlow based on Matterport's [**version**](https://github.com/matterport/Mask_RCNN). The model generates bounding boxes and segmentation masks for each instance of an object in the image, usingFeature Pyramid Network (FPN) and a ResNet101 backbone.
+This is an implementation of [**Mask R-CNN**](https://arxiv.org/abs/1703.06870) on Python 3, Keras, and TensorFlow based on Matterport's [**version**](https://github.com/matterport/Mask_RCNN). The model generates bounding boxes and segmentation masks for each instance of an object in the image, with **Feature Pyramid Network (FPN) + ResNet-101** as backbones.
 
 ![](Images/model.png)
 
@@ -9,11 +9,11 @@ This is an implementation of [**Mask R-CNN**](https://arxiv.org/abs/1703.06870) 
 * Mask R-CNN implementation built on TensorFlow and Keras.
 * Model training with _data augmentation_ and _various configuration_.
 * **_Custom mAP callback_** during the training process for initial evaluation.
-* Training with **5-fold cross-validation** strategy.
+* Training with **_5-fold cross-validation_** strategy.
 * Evaluation with mean Average Precision (mAP) on COCO metric `AP@.50:.05:.95` and PASCAL VOC metric `AP@.50`. For more information, read [**here**](https://cocodataset.org/#detection-eval).
-* Jupyter notebooks example to visualize the detection pipeline at every step and understand more about Mask R-CNN.
-* Convert predicted image results to the annotated file respectively for further training or expanding the dataset (with VGG Image Annotator format - the annotatin format is described in detail [below](#annotation-format). Achieved **a finer, more accurate mask** with less annotating time than manual annotating (saving ~3 quarters in large-scale).
-    * For instance, the comparison between the annotated mask by handwork (**_left_**) and by Mask R-CNN's prediction (**_right_**)
+* **_Jupyter notebooks examples_** to visualize the detection pipeline at every step and understand more about Mask R-CNN.
+* Convert predicted results to the VGG [annotation format](#annotation-format) to expand the dataset for further training. Achieved a **_finer, more accurate mask_** with less labeling time than by handwork (~3 quarters in large-scale).
+    * For instance, the comparison between the annotated mask by handwork (**_left_**) and by model's prediction (**_right_**)
         ![](Images/annotation.png)
 
 ## Structure:
