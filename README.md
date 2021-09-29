@@ -92,7 +92,7 @@ Annotated image for this implementation is created by [VGG Image Annotator](http
                    'shape_attributes': {
                        'all_points_x': [...],
                        'all_points_y': [...],
-                       'name': 'polygon'}},
+                       'name': <class_name>}},
                ... more regions ...
            },
            'size': <image_size>
