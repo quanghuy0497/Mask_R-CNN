@@ -72,8 +72,8 @@ model.load_weights(weight_path, by_name=True)
 
 
 n = 0
-count_porn = 0
-count_non = 0
+positive = 0
+negative = 0
 
 
 for image_name in sorted(os.listdir(image_path)):
@@ -90,17 +90,17 @@ for image_name in sorted(os.listdir(image_path)):
     n += 1
 
     if r["rois"].shape[0]:
-      count_porn += 1
+      positive += 1
       check = 1
-    else: count_non += 1
+    else: negative += 1
 
     if check:
-      print(image_name," - Porn")
-    else: print(image_name," - Not Porn")
+      print(image_name," - Positive")
+    else: print(image_name," - Negative")
 
     # visualize.display_instances(image_name,image, r['rois'], r['masks'], r['class_ids'], dataset.class_names, r['scores'])
     visualize.save_image(image_name, image, r['rois'], r['masks'], r['class_ids'], dataset.class_names, r['scores'])
 
 print("Total: ", n ," images")
-print("Porn: ", count_porn, " - ",count_porn/n * 100,"%")
-print("Non: ", count_non, " - ",count_non/n * 100,"%")
+print("Postivie: ", positive, " - ",positive/n * 100,"%")
+print("Negative: ", negative, " - ",negative/n * 100,"%")
