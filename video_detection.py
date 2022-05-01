@@ -40,8 +40,8 @@ for names in sorted(os.listdir(VIDEO_PATH)):
         FPS = 25
 
         ret =  1
-        check_porn  = 0
-        check_non   = 0
+        check_pos  = 0
+        check_nev   = 0
     
         while(ret):
             ret, frame = video.read()
@@ -53,14 +53,14 @@ for names in sorted(os.listdir(VIDEO_PATH)):
                 r = results[0]
     
                 if r["rois"].shape[0]:      #detected
-                    check_porn += 1
-                else: check_non += 1
-        if (check_porn >= 3):
-            video_porn_3_frame += 1
+                    check_pos += 1
+                else: check_nev += 1
+        if (check_pos >= 3):
+            video_pos_3_frame += 1
         video.release()
         cv2.destroyAllWindows()
 
 print("Total videos: " ,video_count, "\n")
-file.write("Porn videos 3 frames: ", video_porn, "\n")
-file.write(" Non videos 3 frames: ", video_count - video_porn,"\n")
+file.write("Positive videos 3 frames: ", video_positive, "\n")
+file.write("Negative videos 3 frames: ", video_count - video_positive,"\n")
 file.close()
